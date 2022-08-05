@@ -1,0 +1,12 @@
+<div class="display">
+  <img src="/assets/images/ethereum.svg" />
+
+  <span
+    [title]="accountAddress"
+    #tooltip
+    matTooltipPosition="below"
+    [matTooltip]="message"
+    (click)="onCopyToClipboard()">
+    {{ accountAddress | shortAddress }}
+  </span>
+</div>
