@@ -2,10 +2,20 @@
   "name": "ngx-ethereum",
   "version": "0.1.0",
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0"
+    "@angular/common": "^14.1.2",
+    "@angular/core": "^14.1.2"
   },
   "dependencies": {
+    "@angular/cdk": "^14.1.1",
+    "@angular/material": "^14.1.1",
     "tslib": "^2.3.0"
-  }
+  },
+  "description": "The goal of this library is to be published as npm packages and we can import it in multiple Apps, also it will enhance code reusability and avoid various bad practices or architectural mistakes that can make it difficult to decouple and reuse code in the future.",
+  "main": "karma.conf.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
