@@ -29,7 +29,14 @@
           "options": {
             "main": "projects/ngx-ethereum/src/test.ts",
             "tsConfig": "projects/ngx-ethereum/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-ethereum/karma.conf.js"
+            "karmaConfig": "projects/ngx-ethereum/karma.conf.js",
+            "assets": [
+              {
+                "input": "projects/ngx-ethereum/src/assests/images",
+                "glob": "**/*",
+                "output": "assests/images/ngx-ethereum"
+              }
+            ]
           }
         }
       }
