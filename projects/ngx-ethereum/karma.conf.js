@@ -29,7 +29,13 @@ module.exports = function (config) {
       subdir: ".",
       reporters: [{ type: "html" }, { type: "text-summary" }],
     },
-
+    browsers: ["ChromeHeadlessCI"],
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox"],
+      },
+    },
     reporters: ["progress", "kjhtml"],
     port: 9876,
     colors: true,
