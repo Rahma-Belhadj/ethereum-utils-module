@@ -8,7 +8,7 @@ jobs:
       ‐ checkout
       ‐ restore_cache:
           key: ethereum-utils-modulet-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      ‐ run: yarn install .
+      ‐ run: yarn add .
       ‐ save_cache:
           key: ethereum-utils-module-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
