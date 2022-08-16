@@ -52,7 +52,73 @@ Run `ng test ngx-ethereum` to execute the unit tests via [Karma](https://karma-r
 This library exposes an account component which allows us to display
 the account address and copy it.
 
-Also, it exposes a short address pipe which allows us to reduce the size of the account address.
+Here we have a little code demonstration :
+
+We set this code block in account.component.ts :
+
+```
+export class AccountComponent {
+  @Input()
+  accountAddress!: string;
+
+  @ViewChild(MatTooltip)
+  tooltip!: MatTooltip;
+
+  message = 'Copy the address';
+
+  async onCopyToClipboard() {
+    await navigator.clipboard.writeText(this.accountAddress).then(() => {
+      this.tooltip.show();
+      this.message = 'copied !';
+      setTimeout(() => {
+        this.message = 'Copy the address';
+      }, 3000);
+    });
+  }
+}
+
+```
+
+And we set this code block in account.component.html :
+
+```
+ <span
+    [title]="accountAddress"
+    #tooltip
+    matTooltipPosition="below"
+    [matTooltip]="message"
+    (click)="onCopyToClipboard()">
+    {{ accountAddress | shortAddress }}
+  </span>
+```
+
+Also, this library exposes a short address pipe which allows us to reduce the size of the account address.
+
+```
+@Pipe({
+  name: 'shortAddress',
+})
+export class ShortAddressPipe implements PipeTransform {
+  static readonly ADDRESS_MAX_LENGTH = 42;
+
+  transform(value: string): string {
+    if (value === null) {
+      return '';
+    }
+    if (value === undefined) {
+      return '';
+    }
+    if (value === '') {
+      return '';
+    }
+    if (value.length !== ShortAddressPipe.ADDRESS_MAX_LENGTH) {
+      // not a valid address
+      return '';
+    }
+    return `${value.substring(0, 6)}...${value.slice(-4)}`;
+  }
+}
+```
 
 ## Further Help
 

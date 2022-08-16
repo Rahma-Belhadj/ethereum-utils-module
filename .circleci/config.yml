@@ -1,16 +1,17 @@
-version: 2
+version: 2.1
 jobs:
   build:
-    working_directory: ~/ethereum-utils-module
+    working_directory: ~/ng-ethereum-utils-module
     docker:
       ‐ image: circleci/node:10-browsers
     steps:
       ‐ checkout
       ‐ restore_cache:
           key: ethereum-utils-modulet-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      ‐ run: yarn add .
+      ‐ run: yarn 
       ‐ save_cache:
           key: ethereum-utils-module-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             ‐ "node_modules"
       ‐ run: yarn run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      
