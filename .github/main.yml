@@ -1,5 +1,13 @@
+---
 name: CI Angular app through Github Actions
-on: push
+
+# Trigger deployment on tags
+on:
+  push:
+    tags:
+      - '*'
+      
+ # Jobs definition
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,7 +19,7 @@ jobs:
           node-version: 14.x
 
       ‐ name: Setup
-        run: yarn
+        run: yarn install
 
       ‐ name: Test
         run: |
