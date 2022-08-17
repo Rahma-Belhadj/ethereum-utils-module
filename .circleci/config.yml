@@ -3,15 +3,14 @@ jobs:
   build:
     working_directory: ~/ng-ethereum-utils-module
     docker:
-      ‐ image: circleci/node:10-browsers
+      - image: circleci/node:10-browsers
     steps:
-      ‐ checkout
-      ‐ restore_cache:
-        key: ethereum-utils-modulet-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      ‐ run: yarn install
-      ‐ save_cache:
-        key: ethereum-utils-module-{{ .Branch }}-{{ checksum "yarn.lock" }}
-        paths:
-          ‐ "node_modules"
-      ‐ run: yarn run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-      
+      - checkout
+      - restore_cache:
+          key: ethereum-utils-modulet-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          key: ethereum-utils-module-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+      - run: yarn run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
