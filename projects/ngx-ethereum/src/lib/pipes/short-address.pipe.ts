@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ShortAddressPipe implements PipeTransform {
   static readonly ADDRESS_MAX_LENGTH = 42;
 
-  transform(value: string): string {
+  transform(value: any): string {
     if (value === null) {
       return '';
     }
