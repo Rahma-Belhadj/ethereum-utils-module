@@ -15,12 +15,12 @@ describe('ShortAddressPipe', () => {
 
   it('The pipe is no longer displayed if the address is null', () => {
     const pipe = new ShortAddressPipe();
-    expect(pipe.transform('null')).toEqual('');
+    expect(pipe.transform(String(null))).toEqual('');
   });
 
   it('The pipe is no longer displayed if the address is undefined', () => {
     const pipe = new ShortAddressPipe();
-    expect(pipe.transform('undefined')).toEqual('');
+    expect(pipe.transform(String(undefined))).toEqual('');
   });
 
   it('The pipe is no longer displayed if the ADDRESS_MAX_LENGTH is different from 42 digits', () => {
