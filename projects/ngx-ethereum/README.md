@@ -12,7 +12,6 @@ The goal of this library is to be published as npm packages and we can import it
 
 ## General Information
 
-An Angular library is an Angular project that differs from an application in that it cannot run on its own. Also it must be imported and used in an application.
 Libraries extend Angular's base functionality and can be used locally in your workspace, or it can be published as npm packages to share with other projects or other Angular developers.
 
 ## Technologies Used
