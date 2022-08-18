@@ -32,9 +32,9 @@
             "karmaConfig": "projects/ngx-ethereum/karma.conf.js",
             "assets": [
               {
-                "input": "projects/ngx-ethereum/src/assests/images",
+                "input": "projects/ngx-ethereum/src/assets/images",
                 "glob": "**/*",
-                "output": "assests/images/ngx-ethereum"
+                "output": "assets/images/ngx-ethereum"
               }
             ]
           }
