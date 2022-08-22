@@ -8,7 +8,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 })
 export class AccountComponent {
   @Input()
-  accountAddress!: string;
+  accountAddress: string = '';
 
   @ViewChild(MatTooltip)
   tooltip!: MatTooltip;
