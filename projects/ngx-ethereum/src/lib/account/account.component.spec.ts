@@ -31,7 +31,11 @@ describe('AccountComponent', () => {
     expect(account.message).toEqual('Copy the address');
   });
 
-  it('should check the size of the account address into the template', () => {
+  it('span should contains the  account address', () => {
+    expect(span.textContent).toContain(component.accountAddress);
+  });
+
+  it('span should contains the  account address with a short size', () => {
     component.accountAddress = '0x7D4cC6cA482E0c522E0A223515F6234eD86E6A57';
     fixture.detectChanges();
     expect(span.textContent).toContain('0x7D4c...6A57');
