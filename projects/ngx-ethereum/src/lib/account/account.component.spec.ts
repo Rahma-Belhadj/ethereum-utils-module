@@ -25,7 +25,7 @@ describe('AccountComponent', () => {
     expect(account).toBeTruthy();
   });
 
-  it('should check the messages', () => {
+  it('should check the message', () => {
     const account = new AccountComponent();
     fixture.detectChanges();
     expect(account.message).toEqual('Copy the address');
