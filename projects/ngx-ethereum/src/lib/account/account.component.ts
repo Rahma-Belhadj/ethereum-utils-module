@@ -13,7 +13,7 @@ export class AccountComponent {
   @ViewChild(MatTooltip)
   tooltip!: MatTooltip;
 
-  message = 'Copy the address';
+  public message = 'Copy the address';
 
   async onCopyToClipboard() {
     await navigator.clipboard.writeText(this.accountAddress).then(() => {
