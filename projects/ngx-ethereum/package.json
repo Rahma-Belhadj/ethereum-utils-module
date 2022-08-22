@@ -1,10 +1,10 @@
 {
   "name": "ngx-ethereum",
   "version": "0.1.0",
-  "": {
-    "@angular/common": ">=12.0.0 <14.0.0",
-    "@angular/core": ">=12.0.0 <14.0.0",
-    "@angular/forms": ">=12.0.0 <14.0.0"
+  "peerDependencies": {
+    "@angular/common": ">=12.0.0",
+    "@angular/core": ">=12.0.0",
+    "@angular/forms": ">=12.0.0"
   },
   "description": "The goal of this library is to be published as npm packages and we can import it in multiple Apps, also it will enhance code reusability and avoid various bad practices or architectural mistakes that can make it difficult to decouple and reuse code in the future.",
   "main": "karma.conf.js",
